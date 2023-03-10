@@ -1,4 +1,4 @@
-FROM node:12.16.1
+FROM node:18.10.0
 WORKDIR /projects
-RUN npm install -g @angular/cli@9.1.8
+RUN npm install -g @angular/cli
 EXPOSE 4200
