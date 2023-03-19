@@ -3,5 +3,6 @@ WORKDIR /projects
 RUN apt update && apt install -y \
     sudo \
     vim
-RUN npm install -g @angular/cli
+COPY ./angular-todo/package*.json ./
+RUN npm install
 EXPOSE 4200
