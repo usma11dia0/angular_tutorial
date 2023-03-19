@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface Task {
-  title: string;
-  done: boolean;
-  deadline: Date;
-}
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-task-list-item',
@@ -28,6 +23,6 @@ export class TaskListItemComponent implements OnInit {
 
 
   isOverdue(task:Task) {
-    return !task.done && task.deadline < new Date();
+    return !task.done && task.deadline && task.deadline.getTime() < new Date().setHours(0, 0, 0, 0);
   }
 }
